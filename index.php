@@ -43,7 +43,7 @@ if (isset($_POST['get_airtime'])) {
             "headers": {
                 "Content-Type": "application/json",
                 "X-Requested-With": "XMLHttpRequest",
-                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Origin": "https://airtsend.herokuapp.com/",
             },
             "data": JSON.stringify({"Code":"airtel","Amount":100,"PhoneNumber":"07068260000","SecretKey":"60m1fdz9shbd"}),
             };
