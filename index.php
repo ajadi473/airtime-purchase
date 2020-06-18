@@ -1,25 +1,31 @@
 <?php
 if (isset($_POST['get_airtime'])) {
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-        CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => 'https://sandbox.wallets.africa/bills/airtime/purchase',
-        'Content-Type: application/json',
-    ]);
 
-    $result = curl_exec($curl);
 
-    echo $result;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://sandbox.wallets.africa/bills/airtime/purchase",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"airtel\",\r\n  \"Amount\": 100,\r\n  \"PhoneNumber\": \"07068260000\",\r\n  \"SecretKey\": \"60m1fdz9shbd\"\r\n}",
+        CURLOPT_HTTPHEADER => array(
+            "Content-Type: application/json",
+            "Access-Control-Allow-Origin: *",
+            "AUTHORIZATION:uf9wgls28jts",
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
 }
-
-// curl --location --request POST 'https://sandbox.wallets.africa/bills/airtime/purchase' \
-// --header 'Content-Type: application/json' \
-// --data-raw '{
-//   "Code": "airtel",
-//   "Amount": 100,
-//   "PhoneNumber": "07068260000",
-//   "SecretKey": "apisecret"
-// }'
 ?>
 
 <!DOCTYPE html>
@@ -34,23 +40,6 @@ if (isset($_POST['get_airtime'])) {
         <input type="text" name="number" id="">
         <input type="submit" name="get_airtime" value="Send">
     </form>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script>
-        var settings = {
-            "url": "https://sandbox.wallets.africa/bills/airtime/purchase",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json",
-                "X-Requested-With": "XMLHttpRequest",
-                "Access-Control-Allow-Origin": "https://airtsend.herokuapp.com/",
-            },
-            "data": JSON.stringify({"Code":"airtel","Amount":100,"PhoneNumber":"07068260000","SecretKey":"60m1fdz9shbd"}),
-            };
 
-            $.ajax(settings).done(function (response) {
-            console.log(response);
-            });
-    </script>
 </body>
 </html>
