@@ -45,7 +45,7 @@ if (isset($_POST['get_airtime'])) {
                 "X-Requested-With": "XMLHttpRequest",
                 "Access-Control-Allow-Origin": "*",
             },
-            "data": JSON.stringify({"Code":"airtel","Amount":100,"PhoneNumber":"07068260000","SecretKey":"60m1fdz9shbd "}),
+            "data": JSON.stringify({"Code":"airtel","Amount":100,"PhoneNumber":"07068260000","SecretKey":"60m1fdz9shbd"}),
             };
 
             $.ajax(settings).done(function (response) {
