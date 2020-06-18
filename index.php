@@ -41,7 +41,8 @@ if (isset($_POST['get_airtime'])) {
             "method": "POST",
             "timeout": 0,
             "headers": {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
             },
             "data": JSON.stringify({"Code":"airtel","Amount":100,"PhoneNumber":"07068260000","SecretKey":"60m1fdz9shbd "}),
             };
