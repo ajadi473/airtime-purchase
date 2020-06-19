@@ -29,7 +29,7 @@ if (isset($_POST['get_airtime'])) {
 
         curl_close($curl);
         echo $response;
-        echo $response['message'];
+        echo $response['Message'];
 }
 ?>
 
