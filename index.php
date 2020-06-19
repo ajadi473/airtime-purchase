@@ -41,8 +41,8 @@ if (isset($_POST['get_airtime'])) {
 </head>
 <body>
     <form action="" method="post">
-        <input type="number" name="number" id="" required>
-        <input type="number" name="amount" size="4" id="" required>
+        <input type="number" name="number" placeholder="Provide Number" required>
+        <input type="number" name="amount" size="4" id="provice Amount" required>
         <select value="" name="network">
             <option selected name="mtn" id="">MTN</option>
             <option name="airtel" id="">Airtel</option>
