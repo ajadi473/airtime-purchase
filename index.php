@@ -2,9 +2,10 @@
 if (isset($_POST['get_airtime'])) {
         $number = $_POST['number'];
         
-        $amount = 100;
-        // echo $number;
-        // die();
+        $amount = $_POST['amount'];
+        
+        $network = $_POST['network'];
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -16,7 +17,7 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"mtn\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
@@ -41,8 +42,13 @@ if (isset($_POST['get_airtime'])) {
 <body>
     <form action="" method="post">
         <input type="number" name="number" id="" required>
-        <input type="number" name="amount" id="" required>
-        <input type="submit" name="get_airtime" value="Send">
+        <input type="number" name="amount" size="4" id="" required>
+        <select value="" name="network">
+            <option selected name="mtn" id="">MTN</option>
+            <option name="airtel" id="">Airtel</option>
+            <option name="glo" id="">GLO</option>
+        </select>
+        <input type="submit" name="get_airtime" value="Send Airtime">
     </form>
 
 </body>
