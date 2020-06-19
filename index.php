@@ -28,7 +28,10 @@ if (isset($_POST['get_airtime'])) {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+        $a = $response;
+        echo $a;
+
+        echo "The message returned ".$a["Message"];
 
         // $d = json_decode($response);
         // echo $d;
