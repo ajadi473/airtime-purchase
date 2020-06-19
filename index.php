@@ -57,7 +57,7 @@ if (isset($_POST['get_airtime'])) {
                 <form class="form-signin" method="POST">
                 <div class="form-label-group">
                     <input type="number" id="inputNumber" name="number" placeholder="Provide Number" class="form-control" required autofocus>
-                    <label for="inputNumber">Provide Mobile Number to send sms to</label>
+                    <label for="inputNumber">Provide Mobile Number</label>
                 </div>
 
                 <div class="form-label-group">
