@@ -1,5 +1,11 @@
 <?php
 if (isset($_POST['get_airtime'])) {
+        // public uf9wgls28jts 
+        // secret 60m1fdz9shbd  
+
+        // test keys
+        // Secret Key: hfucj5jatq8h
+        // Public Key: uvjqzm5xl6bw
         $number = $_POST['number'];
         
         $amount = $_POST['amount'];
@@ -9,7 +15,8 @@ if (isset($_POST['get_airtime'])) {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://sandbox.wallets.africa/bills/airtime/purchase",
+        // CURLOPT_URL => "https://sandbox.wallets.africa/bills/airtime/purchase",
+        CURLOPT_URL => "https://api.wallets.africa/bills/airtime/purchase",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -17,11 +24,11 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"60m1fdz9shbd\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
-            "AUTHORIZATION: Bearer uvjqzm5xl6bw",
+            "AUTHORIZATION: Bearer uf9wgls28jts",
         ),
         ));
 
