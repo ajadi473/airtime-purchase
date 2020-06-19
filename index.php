@@ -13,7 +13,7 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"mtn\",\r\n  \"Amount\": $number,\r\n  \"PhoneNumber\": \"08104105882\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"mtn\",\r\n  \"Amount\": '.$number.',\r\n  \"PhoneNumber\": \"08104105882\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
