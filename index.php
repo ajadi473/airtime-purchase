@@ -18,7 +18,7 @@ if (isset($_POST['get_airtime'])) {
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
             "Public Key: uf9wgls28jts",
-            "AUTHORIZATION: uf9wgls28jts",
+            "AUTHORIZATION:Bearer uf9wgls28jts",
         ),
         ));
 
