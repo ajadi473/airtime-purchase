@@ -31,7 +31,7 @@ if (isset($_POST['get_airtime'])) {
         $a = $response;
         echo $a;
 
-        echo "The message returned ".$a["Message"];
+        echo "The message returned ".$a['Message'][0];
 
         // $d = json_decode($response);
         // echo $d;
