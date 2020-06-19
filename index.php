@@ -17,11 +17,11 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"60m1fdz9shbd\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
-            "AUTHORIZATION: Bearer uvjqzm5xl6bw",
+            "AUTHORIZATION: Bearer uf9wgls28jts",
         ),
         ));
 
@@ -31,11 +31,6 @@ if (isset($_POST['get_airtime'])) {
         $a = $response;
         echo $a;
 
-        echo "The message returned ".$a['Message'][0];
-
-        // $d = json_decode($response);
-        // echo $d;
-        // echo $d-> Message;
 }
 ?>
 
