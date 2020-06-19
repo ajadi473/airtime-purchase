@@ -40,7 +40,8 @@ if (isset($_POST['get_airtime'])) {
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="number" id="" required>
+        <input type="number" name="number" id="" required>
+        <input type="number" name="amount" id="" required>
         <input type="submit" name="get_airtime" value="Send">
     </form>
 
