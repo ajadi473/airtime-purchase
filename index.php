@@ -17,8 +17,7 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
-            "Public Key: uf9wgls28jts",
-            "AUTHORIZATION:Bearer uf9wgls28jts",
+            "AUTHORIZATION: Bearer uf9wgls28jts",
         ),
         ));
 
