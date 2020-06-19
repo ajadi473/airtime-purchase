@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['get_airtime'])) {
-
+        $number = $_POST['number'];
 
         $curl = curl_init();
 
@@ -13,7 +13,7 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"mtn\",\r\n  \"Amount\": 100,\r\n  \"PhoneNumber\": \"08104105882\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"mtn\",\r\n  \"Amount\": $number,\r\n  \"PhoneNumber\": \"08104105882\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
@@ -37,7 +37,7 @@ if (isset($_POST['get_airtime'])) {
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="number" id="">
+        <input type="text" name="number" id="" required>
         <input type="submit" name="get_airtime" value="Send">
     </form>
 
