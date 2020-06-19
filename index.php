@@ -1,7 +1,8 @@
 <?php
 if (isset($_POST['get_airtime'])) {
         $number = $_POST['number'];
-
+        echo $number;
+        die();
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
