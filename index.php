@@ -1,11 +1,6 @@
 <?php
 if (isset($_POST['get_airtime'])) {
-        // public uf9wgls28jts 
-        // secret 60m1fdz9shbd  
-
-        // test keys
-        // Secret Key: hfucj5jatq8h
-        // Public Key: uvjqzm5xl6bw
+       
         $number = $_POST['number'];
         
         $amount = $_POST['amount'];
@@ -24,11 +19,11 @@ if (isset($_POST['get_airtime'])) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"60m1fdz9shbd\"\r\n}",
+        CURLOPT_POSTFIELDS =>"{\r\n  \"Code\": \"$network\",\r\n  \"Amount\": $amount,\r\n  \"PhoneNumber\": \"$number\",\r\n  \"SecretKey\": \"hfucj5jatq8h\"\r\n}",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Access-Control-Allow-Origin: *",
-            "AUTHORIZATION: Bearer uf9wgls28jts",
+            "AUTHORIZATION: Bearer uvjqzm5xl6bw",
         ),
         ));
 
